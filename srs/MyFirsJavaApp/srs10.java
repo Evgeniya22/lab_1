@@ -13,4 +13,5 @@ public class srs10 {
         System.out.println("Сумма ="+(m2+m1));
         System.out.println("Разность ="+(m2-m1));
         in.close();    }
+    123456
 }
