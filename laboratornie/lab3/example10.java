@@ -13,7 +13,7 @@ public class example10 {
             nums[i] = random.nextInt(200);
             System.out.println("Элемент массива ["+i+"] = " + nums[i]);
         }
-        for(int i = nums.length ; i >= 0 ; i--) {
+        for(int i = nums.length - 1 ; i >= 0 ; i--) {
             for (int j = 0; j < i; j++) {
                 if (nums[j] < nums[j + 1]) {
                     int tmp = nums[j];
