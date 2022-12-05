@@ -1,16 +1,15 @@
-package laba1;
+package lab1;
+
 import java.util.Scanner;
 
-
-public class srs10 {
+public class srs8 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Введите первое число: ");
-        int m1 = in.nextInt();
+        int op1 = in.nextInt();
         System.out.println("Введите второе число число: ");
-        int m2 = in.nextInt();
-        System.out.println("Сумма ="+(m2+m1));
-        System.out.println("Разность ="+(m2-m1));
+        int op2 = in.nextInt();
+        System.out.println(op1+"+"+op2+"="+(op1+op2));
         in.close();    }
 }

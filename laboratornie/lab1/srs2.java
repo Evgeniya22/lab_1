@@ -1,6 +1,8 @@
-package laba1;
+package lab1;
+
 import java.util.Scanner;
-public class example5 {
+
+public class srs2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -10,14 +12,11 @@ public class example5 {
         System.out.println("Input age: ");
         int age = in.nextInt();
 
-        System.out.println("Input height: ");
-        float height = in.nextFloat();
-
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
-        System.out.println("Height: " + height);
-        in.close();
+               in.close();
 
     }
 
 }
+

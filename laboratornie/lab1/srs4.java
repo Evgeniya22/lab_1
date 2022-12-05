@@ -1,4 +1,4 @@
-package laba1;
+package lab1;
 
 import java.util.Scanner;
 public class srs4 {
