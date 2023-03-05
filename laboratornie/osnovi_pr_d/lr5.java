@@ -13,24 +13,48 @@ public class lr5 {
             int qobjects = user.nextInt();
             System.out.println("Введите количество новых или модифицируемых бизнес методов: ");
             int qMeth = user.nextInt();
-            double Eui = medianE(2, 4, 20);
+            System.out.println("Введите минимальные трудозатраты для одного экрана: ");
+            int minProb1 = user.nextInt();
+            System.out.println("Введите минимальные трудозатраты для одного обработчика данных: ");
+            int minProb2 = user.nextInt();
+            System.out.println("Введите минимальные трудозатраты для нового бизнес-объекта: ");
+            int minProb3 = user.nextInt();
+            System.out.println("Введите минимальные трудозатраты для добавления нового бизнес-метода: ");
+            int minProb4 = user.nextInt();
+            System.out.println("Введите наиболее вероятные трудозатраты для одного экрана: ");
+            int mostProb1 = user.nextInt();
+            System.out.println("Введите наиболее вероятные трудозатраты для одного обработчика данных: ");
+            int mostProb2 = user.nextInt();
+            System.out.println("Введите наиболее вероятные трудозатраты для нового бизнес-объекта: ");
+            int mostProb3 = user.nextInt();
+            System.out.println("Введите наиболее вероятные трудозатраты для добавления нового бизнес-метода: ");
+            int mostProb4 = user.nextInt();
+            System.out.println("Введите максимальные трудозатраты для одного экрана: ");
+            int maxProb1 = user.nextInt();
+            System.out.println("Введите максимальные трудозатраты для одного обработчика данных: ");
+            int maxProb2 = user.nextInt();
+            System.out.println("Введите максимальные трудозатраты для нового бизнес-объекта: ");
+            int maxProb3 = user.nextInt();
+            System.out.println("Введите максимальные трудозатраты для добавления нового бизнес-метода: ");
+            int maxProb4 = user.nextInt();
+            double Eui = medianE(minProb1, mostProb1, maxProb1);
             System.out.printf("\nСредняя трудоемкость кодирования пользовательского экрана равна %.2f чел.*час\n", Eui);
-            double Eact = medianE(4, 8, 32);
+            double Eact = medianE(minProb2, mostProb2, maxProb2);
             System.out.printf("Средняя трудоемкость кодирования одного обработчика событий равна %.2f чел.*час\n", Eact);
-            double Ebo = medianE(2, 3, 8);
+            double Ebo = medianE(minProb3, mostProb3, maxProb3);
             System.out.printf("Средняя трудоемкость кодирования нового бизнес-объекта равна %.2f чел.*час\n", Ebo);
-            double Ebm = medianE(2, 6, 26);
+            double Ebm = medianE(minProb4, mostProb4, maxProb4);
             System.out.printf("Средняя трудоемкость кодирования нового бизнес-метода равна %.2f чел.*час\n\n", Ebm);
-            double Ci = CKO(2, 20);
+            double Ci = CKO(minProb1, maxProb1);
             System.out.printf("Среднеквадратичное отклонение кодирования пользовательского экрана " +
                     "равна %.2f чел.*час\n", Ci);
-            double Ct = CKO(4, 32);
+            double Ct = CKO(minProb2, maxProb2);
             System.out.printf("Среднеквадратичное отклонение кодирования одного обработчика событий " +
                     "равна %.2f чел.*час\n", Ct);
-            double Cb = CKO(2, 8);
+            double Cb = CKO(minProb3, maxProb3);
             System.out.printf("Среднеквадратичное отклонение кодирования нового бизнес-объекта " +
                     "равна %.2f чел.*час\n", Cb);
-            double CKObm = CKO(2,26);
+            double CKObm = CKO(minProb4,maxProb4);
             System.out.printf("Среднеквадратичное отклонение кодирования нового бизнес-метода " +
                     "равна %.2f чел.*час\n\n", CKObm);
             double Etl = Eui * qUI + Eact * qAct + Ebo * qobjects + Ebm * qMeth;
@@ -50,9 +74,9 @@ public class lr5 {
             double manMonthTotalE = wProject / 132;
             System.out.printf("Общая трудоемкость проекта равна %.2f чел.*мес.\n", manMonthTotalE);
             double pLength = 2.5 * Math.pow(manMonthTotalE, 1./3);
-            System.out.printf("Оптимальная продолжительность проекта равна %.1f месяцев\n", pLength);
-            int crewQuantity = (int) Math.ceil(manMonthTotalE / pLength);
-            System.out.printf("Средняя численность команды равна %d человек", crewQuantity);
+            System.out.printf("Оптимальная продолжительность проекта равна %.2f месяцев\n", pLength);
+            double crewQuantity = (manMonthTotalE / pLength);
+            System.out.printf("Средняя численность команды равна %.2f человек", crewQuantity);
         }
 
         public static double medianE(int minRequired, int mostProbable, int worstCase) {
