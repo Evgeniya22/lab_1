@@ -1,4 +1,4 @@
-package tim_1787;
+package timus_1787;
 
 import java.util.Scanner;
 
